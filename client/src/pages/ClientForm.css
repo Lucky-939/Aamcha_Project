@@ -1,0 +1,78 @@
+.client-form-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f7f7f7, #e5f3f2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.client-form-box {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(12, 59, 59, 0.15);
+  width: 100%;
+  max-width: 600px;
+}
+
+.client-form-box h2 {
+  text-align: center;
+  color: #0C3B3B;
+  margin-bottom: 10px;
+}
+
+.form-subtext {
+  text-align: center;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+.client-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.client-form label {
+  font-weight: 600;
+  margin: 10px 0 6px;
+  color: #1e1e1e;
+}
+
+.client-form input,
+.client-form textarea,
+.client-form select {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.client-form input:focus,
+.client-form textarea:focus,
+.client-form select:focus {
+  border-color: #145858;
+}
+
+.client-form textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.submit-btn {
+  background-color: #0C3B3B;
+  color: white;
+  padding: 14px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #145858;
+}

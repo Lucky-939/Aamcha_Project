@@ -1,0 +1,152 @@
+.navbar {
+  background-color: #0c3b3b;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  border-bottom: 1px solid #ffffff20;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  margin-right: 12px;   
+  filter: brightness(1.2); 
+}
+
+
+
+.nav-links {
+  display: flex;
+  gap: 64px;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #fdcb58; /* Yellow accent */
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.auth-buttons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.login {
+  background-color: transparent;
+  border: 1px solid #ffc94b;
+  color: #ffc94b;
+}
+
+.register {
+  background-color: #ffc94b;
+  color: #0c3b3b;
+}
+
+.login:hover,
+.register:hover {
+  opacity: 0.85;
+}
+
+.login-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #FFC94B;
+  color: #0C3B3B;
+  text-decoration: none;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.login-btn:hover {
+  background-color: #f0b829;
+  transform: scale(1.05);
+}
+
+.user-dropdown {
+  position: relative;
+}
+
+.user-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #FFC94B;
+  color: #0C3B3B;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.user-toggle:hover {
+  background-color: #f0b829;
+  transform: scale(1.03);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background-color: white;
+  color: #0C3B3B;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 180px;
+  z-index: 100;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 12px 16px;
+  text-align: left;
+  text-decoration: none;
+  background-color: white;
+  border-bottom: 1px solid #eee;
+  color: #0C3B3B;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover {
+  background-color: #f7f7f7;
+}
