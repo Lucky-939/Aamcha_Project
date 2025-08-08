@@ -16,8 +16,9 @@ import ClientForm from './pages/ClientForm';
 import FreelancerPage from './pages/FreelancerPage';
 import ProposalPage from './pages/ProposalPage';
 import ExploreProjects from './pages/ExploreProjects';
-import Profile from './pages/Profile/Profile';
+import Dashboard from './pages/Dashboard/Dashboard';
 import Upload from './pages/ProjectUpload/Upload';
+import EditProfile from './pages/Dashboard/EditProfile';
 
 // Context
 import { ProjectProvider } from './context/ProjectContext';
@@ -44,8 +45,9 @@ function App() {
         <Route path="/freelance/freelancer" element={<FreelancerPage />} />
         <Route path="/proposal/:projectId" element={<ProposalPage />} />
         <Route path="/explore" element={<ExploreProjects />} />
-        <Route path="/profile/*" element={<Profile />} />
-        <Route path="/upload" element={<Upload/>}/>
+        <Route path="/dashboard/*" element={<Dashboard />} />
+        <Route path="/upload" element={<Upload />} />
+        <Route path="/profile/edit" element={<EditProfile />} />
       </Routes>
       <Footer />
     </ProjectProvider>

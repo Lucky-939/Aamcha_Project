@@ -42,6 +42,7 @@
   opacity: 0;
   transform: translateY(20px);
   animation-delay: calc(var(--animation-order) * 0.1s);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
@@ -58,14 +59,28 @@
 .project-card p {
   color: #555;
   font-size: 0.95rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .budget {
   display: block;
   font-weight: 500;
   color: #145858;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.attachment-link {
+  display: inline-block;
+  margin-top: 0.4rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
+  color: #145858;
+  text-decoration: underline;
+}
+
+.attachment-link:hover {
+  text-decoration: none;
+  color: #0c3b3b;
 }
 
 .apply-btn {
@@ -82,6 +97,12 @@
 
 .apply-btn:hover {
   background-color: #fcbf3f;
+}
+
+.no-projects {
+  color: #999;
+  font-style: italic;
+  margin-top: 2rem;
 }
 
 /* Animation */

@@ -1,29 +1,37 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; 
+// client/src/pages/FreelancerPage.jsx
+
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './FreelancerPage.css';
 
 const FreelancerPage = () => {
-  const [projects, setProjects] = useState([
-    {
-      id: 1,
-      title: 'Portfolio Website for Designer',
-      description: 'Need a personal website built using React and Tailwind. Must include blog and contact form.',
-      budget: '₹3000 - ₹5000',
-    },
-    {
-      id: 2,
-      title: 'AI Chatbot for Customer Support',
-      description: 'Looking to create a chatbot using Python/NLP for handling queries on a website.',
-      budget: '₹8000',
-    }
-  ]);
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const res = await fetch("http://localhost:5000/api/projects");
+        const data = await res.json();
+        setProjects(data);
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
 
   return (
     <div className="freelancer-page">
       <h1>Available Projects</h1>
       <p className="subtitle">Browse and send proposals to clients who need your skills.</p>
 
-      {projects.length === 0 ? (
+      {loading ? (
+        <p>Loading projects...</p>
+      ) : projects.length === 0 ? (
         <p className="no-projects">No projects available at the moment.</p>
       ) : (
         <div className="project-list">
@@ -36,6 +44,19 @@ const FreelancerPage = () => {
               <h2>{project.title}</h2>
               <p>{project.description}</p>
               <span className="budget">Budget: {project.budget}</span>
+              <p><strong>Tech Need:</strong> {project.skills}</p>
+              <p><strong>Category:</strong> {project.category}</p>
+              <p><strong>Deadline:</strong> {project.deadline}</p>
+              {project.fileUrl && (
+                <a
+                  href={`http://localhost:5000${project.fileUrl}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ display: "block", marginTop: "0.5rem" }}
+                >
+                  📎 View Attachment
+                </a>
+              )}
               <Link to={`/proposal/${project.id}`}>
                 <button className="apply-btn">Send Proposal</button>
               </Link>
@@ -48,4 +69,3 @@ const FreelancerPage = () => {
 };
 
 export default FreelancerPage;
-

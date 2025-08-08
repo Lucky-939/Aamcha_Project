@@ -42,6 +42,7 @@ function Navbar() {
 
       <ul className="nav-links">
         <li><Link to="/">Home</Link></li>
+        <li><Link to="/dashboard">Dashboard</Link></li>
         <li><Link to="/about">About Us</Link></li>
         <li><Link to="/contact">Contact</Link></li>
       </ul>
@@ -57,7 +58,7 @@ function Navbar() {
 
             {dropdownOpen && (
               <div className="dropdown-menu">
-                <Link to="/profile" className="dropdown-item" onClick={() => setDropdownOpen(false)}>
+                <Link to="/dashboard" className="dropdown-item" onClick={() => setDropdownOpen(false)}>
                   My Profile
                 </Link>
                 <button className="dropdown-item" onClick={handleLogout}>
